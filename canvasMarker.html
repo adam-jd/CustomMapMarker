@@ -16,13 +16,14 @@
     <script>
 
         $(function () {
-
+            // create new map object
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: -27.4698, lng: 153.0251 },
                 zoom: 9,
                 mapTypeControl: false
             });
           
+            // get all the marker data and create the custom markers
             $.get('markers.json', function (markerJson) {
                 for (var i = 0; i < markerJson.length; i++) {
                     customMarker.CreateCustomMarker(map, markerJson[i]);
